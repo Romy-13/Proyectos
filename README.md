@@ -1,2 +1,4 @@
 # Proyectos
-Repositorio creado para Proyectos 
+Repositorio creado para Proyectos
+
+En él subiré todos los proyectos que iré creando, modificando y actualizando.
