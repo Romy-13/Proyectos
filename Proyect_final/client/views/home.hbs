@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>PixelPoint</title>
+    <link rel="icon" type="image/png" href="media/img/logo-ecommerce.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="/client/media/img/logo-ecommerce.png" alt="PixelPoint logo" class="h-10 w-10">
+                <span class="text-3xl font-extrabold tracking-tight text-gray-900">PixelPoint</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#"
+                    class="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors duration-300 border-b-2 border-transparent hover:border-gray-900">Inicio</a>
+                <a href="#"
+                    class="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors duration-300 border-b-2 border-transparent hover:border-gray-900">Acerca
+                    de</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <h1 class="page-title text-5xl font-extrabold text-gray-900 mb-8">Nuestra Última Colección</h1>
+
+        <!-- Shop Content -->
+        <div class="card-products-container">
+            <div class="card-products" id="shopContent"></div>
+        </div>
+    </main>
+
+    <!-- Cart Button -->
+    <div class="cart-btn" id="cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+
+    <!-- Cart Counter -->
+    <span class="cart-counter" id="cart-counter">0</span>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-container" id="modal-container"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

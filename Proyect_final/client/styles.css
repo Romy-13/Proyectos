@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: "Audiowide", sans-serif;
+}
+
+.primary {
+    background-color: #669bbb !important;
+}
+
+.nav {
+    background-color: #669bbb !important;
+    height: 50px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+  
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 400px;
+}
+  
+.carousel-item {
+    min-width: 100%;
+    height: 300px;
+    display: none;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-item.active {
+    display: block;
+}
+
+.categorias,
+.productos {
+    font-size: 2rem;
+    
+}
+
+.presentacion-2{
+    background-color: #000000;
+    
+}
+
+.presentacion h1, 
+.presentacion h2 {
+    color: #40434A; /* Mantiene el color original */
+    text-align: center;
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 10px 0; /* Agrega espacio alrededor de los títulos */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas para un toque más profesional */
+    letter-spacing: 1px; /* Espacio entre letras para mejorar la legibilidad */
+}
+
+/* Estilo para el h1 */
+.presentacion h1 {
+    font-size: 40px; /* Aumenta el tamaño del texto */
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Agrega sombra al texto */
+    padding-bottom: 20px; /* Aumenta el espacio adicional debajo del h1 */
+    margin-bottom: 30px; /* Agrega margen inferior para más espacio */
+    animation: elegant-blink 2s infinite; /* Añade el efecto de parpadeo más elegante */
+}
+
+.card-category {
+    border: 2px solid #669bbb;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-category:hover {
+    transform: translateY(-20px); /* Levanta la tarjeta */
+    box-shadow: 0 8px 16px rgba(4, 3, 3, 0.553); /* Agrega sombra */
+}
+
+/* Efecto de parpadeo más elegante */
+@keyframes elegant-blink {
+    0%, 100% {
+        opacity: 1; /* Totalmente visible */
+    }
+    50% {
+        opacity: 0.8; /* Sutilmente menos visible */
+    }
+}
+
+
+/* Estilo para el h2 */
+.presentacion h2 {
+    font-size: 24px; /* Aumenta el tamaño del texto */
+    font-weight: 600; /* Un peso de fuente ligeramente más ligero que el h1 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra más sutil para el h2 */
+    margin-top: 10px; /* Espacio adicional arriba del h2 */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #858c90;
+    border-radius: 15px;
+}
+
+.card-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* Si los bordes son redondeados, solo aplica a las esquinas superiores */
+}
+
+.ofertas-titulo {
+    font-size: 40px; /* Aumenta el tamaño del texto */
+    font-weight: bold;
+    color: #669bbb; /* Mantiene el color original */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Agrega sombra al texto */
+    border-bottom: 2px solid #669bbb; /* Línea debajo del título */
+    padding-bottom: 20px; /* Espacio adicional debajo del h1 (ajusta según necesites) */
+    text-align: center; /* Asegúrate de que esté centrado */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 10px 0; /* Agrega espacio alrededor del título */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 1px; /* Espacio entre letras */
+    margin-bottom: 30px; /* Agrega margen inferior para más espacio (ajusta según necesites) */
+}
+
+.card-products-container {
+    margin: 5vh auto;
+}
+
+.card-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.card .tarjetas {
+    width: 290px;
+    height: 400px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 0 8px #669bbb;
+    margin: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.tarjetas .pequeña_tarjeta {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    gap: 5px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: 0.3s;
+}
+
+.tarjetas:hover .pequeña_tarjeta {
+    transform: translateX(2px);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.tarjetas .image {
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjetas .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.tarjetas:hover .image img {
+    transform: scale(1.1);
+}
+
+.pequeña_tarjeta i {
+    width: 45px;
+    height: 45px;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 40px;
+    border: 2px solid #669bbb;
+    transition: color 0.2s;
+}
+
+.pequeña_tarjeta i:hover {
+    color: #669bbb;
+}
+
+.product_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.product_text h2 {
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.product_text p {
+    color: #669bbb;
+    line-height: 21px;
+    margin: 8px 0;
+}
+
+.product_text h3 {
+    margin: 7px 0;
+}
+
+.product_text .product_stars {
+    color: darkorange;
+    cursor: pointer;
+    margin-bottom: 19px;
+}
+
+.product_text .btn {
+    padding: 10px 20px;
+    background: #669bbb;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cart-btn-container {
+    position: fixed;
+    bottom: 10vh;
+    right: 40px;
+    display: inline-block;
+}
+
+.cart-btn {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cart-btn .fas {
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal-container {
+    display: none;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 100%;
+    z-index: 1000;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+.modal-container::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-close {
+    float: right;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-body {
+    text-align: center;
+    margin: 0 5px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 2px solid #858c90;
+    padding: 20px;
+}
+
+.product-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.product-info {
+    flex: 1;
+    text-align: left;
+}
+
+.product-info h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: 4em;
+}
+
+.quantity-btn-decrese, .quantity-btn-increse {
+    color: #333333;
+    cursor: pointer;
+    font-size: 16px;
+    width: 28px;
+    font-weight: bold;
+}
+
+.quantity-input {
+    width: 50px;
+    color: #333333;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.delete-product {
+    margin-top: 20px;
+    margin-left: 2em;
+    cursor: pointer;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .presentacion h1 {
+        font-size: 30px; /* Reduce el tamaño del h1 en pantallas más pequeñas */
+    }
+    
+    .presentacion h2 {
+        font-size: 20px; /* Reduce el tamaño del h2 en pantallas más pequeñas */
+    }
+
+    .card .tarjetas {
+        width: 100%; /* Hace que la tarjeta ocupe el 100% del ancho en pantallas más pequeñas */
+    }
+}
+
+/* Estilo del footer */
+.footer {
+    background-color: #333;
+    color: #f1f1f1;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Secciones del footer */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #669bbb;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    font-size: 14px;
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #669bbb;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Redes sociales */
+.social-icons a {
+    display: inline-block;
+    color: #f1f1f1;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #669bbb;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #669bbb;
+    font-size: 14px;
+    color: #aaa;
+}
